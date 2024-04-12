@@ -3,29 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>TP1</title>
 </head>
 <body>
-    <main>
-        <section>
-            <div id="personaje"></div> 
-        </section>
-        
-        <section>
-            <span> 
-                Ingrese el numero del personaje
-            </span>
     
-            <input type="text" id="nombrepersonaje">
-
-            <button>Buscar</button>
-        </section>
-    </main>
-
+    <h1>Personajes de Rick and Morty</h1>
+   
+    <h3>Ingrese el Número del Personaje</h3>
+  
+    <section id="seleccion">
+         
+        <input type="number" id="numpersonaje">
     
+        <button id="boton" onclick="buscarpersonaje()">Buscar Personaje</button>
+            
+        <div id="personajeinfo"></div>
+    </section>   
 </body>
 <script src="fn.js"></script>
-<script src="json.js"></script>
 </html>
 
 
