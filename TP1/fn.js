@@ -21,7 +21,7 @@ for (const fruta of frutas) {
     }
 }*/
 
-  function buscarpersonaje() {
+function buscarpersonaje() {
     
     let numpersonaje = document.getElementById("numpersonaje").value;
     console.log(numpersonaje)
@@ -29,27 +29,22 @@ for (const fruta of frutas) {
         .then(response => response.json())
         .then(data => {
             const personaje = document.getElementById("personajeinfo")
+            
+            if (data.gender == "unknown") {
             personaje.innerHTML = `
                 <div class="nombre">
-                <table>
-                <tr>
-                    <td>Nombre: ${data.name}</td>
-                </tr>
-                <tr>
-                    <td>Estatus: ${data.status}</td>
-                </tr>
-                <tr>
-                    <td>Especie: ${data.species}</td>
-                </tr>
-                <tr>
-                    <td>Genero: ${data.gender}</td> 
-                </tr>
-                </table>
-                <div>`
-  })
+                    <p>Nombre: ${data.name}</p>
+                    <p>Estado: ${data.status}</p>
+                    <p>Especie: ${data.species}</p>
+                    <p>Género: ${data.gender}</p> 
+                    <img src="https://rickandmortyapi.com/api/character/avatar/${data.id}.jpeg"><src>
+                <div>`  
+                } else personaje.innerHTML = `
+                <p>Personaje no encontrado</p>`
+            })
 
-  .catch (error => {
-    console.error("error", error)
-  })
+        .catch (error => {
+            console.error("error", error)
+        })
 
-  }
+}

@@ -3,7 +3,9 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin: 20px;
     font-weight: normal;
+    font-size: normal;
     font-family: apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
@@ -12,6 +14,7 @@ h1 {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin: 20px;
     color: #074173;
     font-family: apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
@@ -21,21 +24,19 @@ h3 {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin: 20px ;
     font-weight: bold;
     font-family: apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
 button {
-    margin: 20px;
+    margin: 15px;
     padding: auto;
     background-color: #C5FF95;
     border-color: #C5FF95;
     border-radius: 0.5rem;
 }
-
-table {
-    font-family:apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-    font-size: 100%;
-    list-style-position: inside;
-    }
-
+ 
+p {
+    margin: 5px;
+}
