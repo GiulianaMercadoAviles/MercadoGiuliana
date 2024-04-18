@@ -21,22 +21,6 @@ const Personaje = {
   "created": "2017-12-27T18:47:44.566Z"
 }
 
-/*console.log (Personaje);
-
-console.log (Personaje.origin.url);
-
-const jugador = {
-  "nombre": "Nahuel",
-  "apellido": "Barrios",
-  "apodo": "perrito",
-  "edad": 28,
-  "clubes": ['San Lorenzo', 'U. Catolica'],
-  "activo": true,
-  "sueldo": 1000000,99,
-}
-
-console.log (jugador.clubes [0],);*/
-
 console.log ("El personaje " + Personaje.name + " esta " + Personaje.status)
 
 document.getElementById("personaje").innerHTML = "El personaje " + Personaje.name + " esta " + Personaje.status
