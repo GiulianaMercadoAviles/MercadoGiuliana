@@ -32,12 +32,12 @@
 }
 
 #match {
-    margin: 10px;
-    padding: auto;
+    margin: 15px;
     display: flex;
+    margin-left: 20px;
     flex-direction: row;
     align-items: center;
-    justify-content:space-around;
+    justify-content: space-around;
     flex-wrap: wrap;
     font-weight: normal;
     font-size: medium;
@@ -47,11 +47,11 @@
 
 #personajeinfo {
     display: flex;
-    margin: 10px;
+    width: 100%;
     flex-direction: initial;
     align-items: center;
     align-content: center;
-    justify-content: space-around;
+    justify-content: center;
 }
 
 .personaje1, .personaje2 {
@@ -75,10 +75,9 @@
     justify-content: center;
     align-items: center;
     color: #B31312;
-    margin: 10px;
     align-content: center;
     flex-wrap: wrap;
-    width: 360px;
+    width: 30%;
 }
 
 #respuesta {

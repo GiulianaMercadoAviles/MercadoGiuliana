@@ -7,9 +7,32 @@ function matchpersonajes() {
         .then(response => response.json())
         .then(data => {
             const personaje = document.getElementById("personajeinfo")
+            console.log(data)
           
-            if (data[0].gender == data[1].gender) {
-            personaje.innerHTML = `
+            if (numpersonaje1 == numpersonaje2) {
+                personaje.innerHTML = `
+
+                <div class="personaje1">
+                    <img src="https://rickandmortyapi.com/api/character/avatar/${data[0].id}.jpeg">
+                    <p id="nombre">${data[0].name}</p>
+                    <p>Género: ${data[0].gender}</p> 
+                </div>
+
+                <div class="resultado">
+                <img id="imagen" src="https://i.pinimg.com/564x/fd/3b/de/fd3bde6ba2d10e5395ad7ed2fdf76231.jpg">
+                    <p id="parrafo">Hay Match</p>
+                </div>
+
+                <div class="personaje2">
+                    <img src="https://rickandmortyapi.com/api/character/avatar/${data[0].id}.jpeg">
+                    <p id="nombre">${data[0].name}</p>
+                    <p>Género: ${data[0].gender}</p> 
+                </div>`  
+            
+            } else if (numpersonaje1 != numpersonaje2) {
+            
+                if (data[0].gender == data[1].gender) {
+                personaje.innerHTML = `
 
                 <div class="personaje1">
                     <img src="https://rickandmortyapi.com/api/character/avatar/${data[0].id}.jpeg">
@@ -45,7 +68,7 @@ function matchpersonajes() {
                     <p id="nombre">${data[1].name}</p>
                     <p>Género: ${data[1].gender}</p> 
                 </div>`
-            })
+            }})
 
         .catch (error => {
             console.error("error", error)
