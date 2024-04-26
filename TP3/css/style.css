@@ -1,0 +1,92 @@
+body {
+    background-image: url(images/fondo.jpeg);
+    background-size: 100%;
+    
+}
+
+#map { 
+    height: 280px; 
+    width: 550px;
+    border-radius: 0.8rem;
+}
+
+.inicio {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+}
+
+.boton {
+    border-radius: 0.8rem;
+    border: #222831;
+    padding: 5px 65px;
+    color: #222831;
+    font-family: apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+.info {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    align-items: center;
+    margin: 50px;
+}
+
+.persona {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    align-items: center;
+    background-color: #EEEEEE;
+    border-radius: 0.8rem;
+    padding: 22px;
+    padding-right: 60px;
+}
+
+#personainfo {
+    display: flex;
+    flex-direction: column;
+    justify-content:space-between;
+    border-radius: 0.8rem;
+    border-color: #222831;
+    padding: 25px 30px;
+    margin: 20px;
+}
+
+#datapersona {
+    display: flex;
+    flex-direction: column;
+    justify-content:space-between;
+    border-radius: 0.8rem;
+    border-color: #222831;
+    padding: 20px;
+}
+
+img {
+    width: 230px;
+}
+
+h1 {
+    font-size: 85px;
+    margin: 40px;
+    font-family: apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    color: white;
+}
+
+h2 {
+    margin: 5px;
+    margin-bottom: 10px; 
+    color: #222831;
+    font-size: 26px;
+    font-weight: bold;
+    font-family: apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+h4 {
+    margin: 3px;
+    color: #222831;
+    font-weight:500;
+    font-family: apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
