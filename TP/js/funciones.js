@@ -16,3 +16,4 @@ function numero(n) {
         alert ("el número " + n + " es mayor que el auxiliar " + aux)
     }
 }
+

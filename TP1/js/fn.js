@@ -6,7 +6,8 @@ function buscarpersonaje() {
         .then(response => response.json())
         .then(data => {
             const personaje = document.getElementById("personajeinfo")
-            
+            console.log(data)
+
             if (data.gender == "unknown") {
             personaje.innerHTML = `
                 <div class="nombre">

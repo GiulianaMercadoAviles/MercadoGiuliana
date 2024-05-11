@@ -1,49 +1,117 @@
-function person() {
+let array1 = [];
+let array2 = [];
+let personajes = [];
+let inicio = 1;
+let fin = 826;
 
-    const urlrandomuser = 'https://randomuser.me/api/'
+function buscarnumeros1(){
 
-    fetch(urlrandomuser) 
-        .then (response => response.json())
-        .then (data => {
+let numero1 = Number(document.getElementById("numero1").value);
 
-            const personas = document.getElementById("personainfo")
-            console.log(data)
+    if (numero1 >= inicio && numero1 <= fin) {
+    
+        if (array1.length < 3) {     
 
-            personas.innerHTML = `
-            <section class="persona">
-                <div id="foto">
-                    <img src="${data.results[0].picture.large}">
-                </div>
-                <div id="datapersona">
-                    <h2>${data.results[0].name.first} ${data.results[0].name.last}</h2>
-                    <h4>${data.results[0].location.country}</h4>
-                    <h4>Latitud: ${data.results[0].location.coordinates.latitude}</h4>
-                    <h4>Longitud: ${data.results[0].location.coordinates.longitude}</h4>
-                </div>
-            </section>`;
+            if (array1.includes(numero1) == true || array2.includes(numero1) == true) {
+                alert("Numero ya ingresado");
+            } else {
 
-            map(data.results[0].location.coordinates.latitude, data.results[0].location.coordinates.longitude);
+                console.log(array1.includes(numero1));
+                array1.push(numero1);
+                console.log(array1)
 
-            conteiner = L.DomUtil.get('map');
+                if (array1.length == 3) {
+                    alert("Ya se ingresaron 3 numeros");
 
-            if (conteiner != null) {
-                conteiner._leaflet_id = null;
-            } 
-        })
-        .catch (error => {
-            console.error("error", error)
-            document.getElementById('error').innerHTML = "Error: " + error;
-        })
+                    let boton1 = document.getElementById("boton1");
+                    boton1.disabled = true;
+
+                    if (array2.length == 3) {
+                    buscarpersonaje(array1, array2)
+                    }
+                } 
+            }
+        } else {
+            alert("Error ya se han ingresado 3 numeros"); 
+        }
+    } else {
+        alert("Error numero no valido");
     }
+}
 
-function map(latitude, longitude) {
+function buscarnumeros2(){
 
-    var map = L.map('map').setView([latitude, longitude], 7);
+let numero2 = Number(document.getElementById("numero2").value);
 
-    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        maxZoom: 19,
-        attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-    }).addTo(map);
+    if (numero2 >= inicio && numero2 <= fin) {
 
-    var marker = L.marker([latitude, longitude]).addTo(map);
+        if (array2.length < 3) {
+    
+            if (array1.includes(numero2) == true || array2.includes(numero2) == true) {
+                alert("Numero ya ingresado");
+            } else {
+            
+                array2.push(numero2);
+                console.log(array2);
+
+                if (array2.length == 3) {
+                    alert("Ya se ingresaron 3 numeros");
+
+                    let boton2 = document.getElementById("boton2");
+                    boton2.disabled = true;
+
+                    if (array1.length == 3) {
+                        buscarpersonaje(array1, array2)
+                    }
+                } 
+            }
+        } else {
+            alert("Error ya se han ingresado 3 numeros"); 
+        }
+    } else {
+        alert("Error numero no valido");
+    }
+}
+
+function buscarpersonaje(array1, array2) {
+
+    let personajes = array1.concat(array2);
+    
+    fetch("https://rickandmortyapi.com/api/character/" + personajes)
+    .then (response => response.json())
+    .then (data => { 
+    
+        console.log(data);
+        console.log(personajes);
+
+        for (j = 0; j < array1.length; j++) {
+            for (i = 0; i < data.length; i++) {
+                
+                if (data[i].id == array1[j]) {
+
+                    resultado1.innerHTML += `
+                    <img src="${data[i].image}">`
+                }
+            }
+        }
+
+        for (j = 0; j < array2.length; j++) {
+            for (i = 0; i < data.length; i++) {
+
+                if (data[i].id == array2[j]) {
+
+                    resultado2.innerHTML += `
+                    <img src="${data[i].image}">`
+                }
+            }
+        }
+    })
+    .catch (error => {
+        console.error("error", error)
+        document.getElementById('error').innerHTML = "Error: " + error;
+
+        if (error == "TypeError: Failed to fetch") {
+            document.getElementById('error').innerHTML = "Error: No hay conexión a internet";
+        }
+    })
 }
