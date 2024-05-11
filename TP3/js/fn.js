@@ -13,7 +13,7 @@ let numero1 = Number(document.getElementById("numero1").value);
         if (array1.length < 3) {     
 
             if (array1.includes(numero1) == true || array2.includes(numero1) == true) {
-                alert("Numero ya ingresado");
+                alert("Número ya ingresado");
             } else {
 
                 console.log(array1.includes(numero1));
@@ -21,7 +21,7 @@ let numero1 = Number(document.getElementById("numero1").value);
                 console.log(array1)
 
                 if (array1.length == 3) {
-                    alert("Ya se ingresaron 3 numeros");
+                    alert("Ya se ingresaron 3 números");
 
                     let boton1 = document.getElementById("boton1");
                     boton1.disabled = true;
@@ -32,10 +32,10 @@ let numero1 = Number(document.getElementById("numero1").value);
                 } 
             }
         } else {
-            alert("Error ya se han ingresado 3 numeros"); 
+            alert("Error ya se han ingresado 3 números"); 
         }
     } else {
-        alert("Error numero no valido");
+        alert("Error número no valido");
     }
 }
 
@@ -48,14 +48,14 @@ let numero2 = Number(document.getElementById("numero2").value);
         if (array2.length < 3) {
     
             if (array1.includes(numero2) == true || array2.includes(numero2) == true) {
-                alert("Numero ya ingresado");
+                alert("Número ya ingresado");
             } else {
             
                 array2.push(numero2);
                 console.log(array2);
 
                 if (array2.length == 3) {
-                    alert("Ya se ingresaron 3 numeros");
+                    alert("Ya se ingresaron 3 números");
 
                     let boton2 = document.getElementById("boton2");
                     boton2.disabled = true;
@@ -66,10 +66,10 @@ let numero2 = Number(document.getElementById("numero2").value);
                 } 
             }
         } else {
-            alert("Error ya se han ingresado 3 numeros"); 
+            alert("Error ya se han ingresado 3 números"); 
         }
     } else {
-        alert("Error numero no valido");
+        alert("Error número no valido");
     }
 }
 
